@@ -18,16 +18,20 @@ function City() {
         getCityRequest().then(setSceneResults);
     }, [setSceneResults]);
 
+    //selecter 的功能（尚未完成）
     // const [value, setvalue] = useState([]);
     // // handleChange(event) {
     // //     this.setState({value: event.target.value});
     // //   }
-    // setvalue("grapefruit");
+    
+    //通過點選selecter 進行頁面跳轉
+    // let url = "LienchiangCounty?$top=30&$format=JSON";
 
     return (
         <div className="App">
             <header className="App-header">
                 <Navbar NavbarTitle="臺北市" />
+                {/* <CityList City={url}/> */}
                 <CityList/>
                 {sceneResults.map((infoCard) => (<InfoCard key={infoCard.ID} Name={infoCard.Name} Description={infoCard.Description} Picture={infoCard.Picture.PictureUrl1} />))}
                 {/* <div ref={res => (this.scroll = res)}></div> 拉到最底刷新axios request 功能（尚未完成）*/}

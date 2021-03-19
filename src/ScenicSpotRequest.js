@@ -23,14 +23,6 @@ export async function getScenicSpotRequest() {
 //old version old version old version old version old version old version old version old version old version
 //old version old version old version old version old version old version old version old version old version
 
-// // console.log(getScenicSpotRequest());
-// const a = getScenicSpotRequest().then(res => 
-//     res[0].Name
-// )
-
-// console.log(a);
-
-
 // function ScenicSpotRequest() {
 //     const url = 'https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?$top=30&$format=JSON';
 //     var ReceivedObj = axios.get(url)
