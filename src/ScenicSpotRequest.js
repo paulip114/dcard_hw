@@ -7,12 +7,12 @@ const Request = axios.create({
 });
 
 //發出request 取得“全部景點列表”
-export const ScenicSpotRequest = () => Request.get('Tourism/ScenicSpot?$top=30&$format=JSON').then(response => response.data);
+export const SendScenicSpotRequest = () => Request.get('Tourism/ScenicSpot?$top=30&$format=JSON').then(response => response.data);
 
 //用 async/await 將收到的Promise data return 
 export async function getScenicSpotRequest() {
     try {
-        const item = await ScenicSpotRequest();
+        const item = await SendScenicSpotRequest();
         // console.log(item);
         return item;
     } catch (err) {

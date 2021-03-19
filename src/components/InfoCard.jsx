@@ -13,7 +13,6 @@ function InfoCard(props) {
             <div className="Content-Format">
                 <div className="ScenicSpotTourismInfo-Name">{props.Name}</div>
                 <div className="ScenicSpotTourismInfo-Description">{props.Description}</div>
-                {/* <img className="ScenicSpotTourismInfo-Picture" src={props.Picture} alt={props.PictureDescription} /> */}
                 <img className="ScenicSpotTourismInfo-Picture" src={props.Picture} alt="" />
             </div>
         </div>

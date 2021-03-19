@@ -66,3 +66,7 @@
     overflow: hidden;
     white-space: nowrap;
 }
+
+.EndOfInfoCard{
+    margin-top: 2vmin;
+}

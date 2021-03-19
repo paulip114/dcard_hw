@@ -3,14 +3,14 @@ import React from 'react';
 
 //import styles
 import './App.css';
-import MainScreen from './screens/MainScreen.jsx';
-// import LessonMaterialScreen from './screens/LessonMaterialScreen.jsx'
+// import MainScreen from './screens/MainScreen.jsx';
+import City from './screens/City.jsx';
 
 
 function App() {
   return (
-    <MainScreen/>
-    // <LessonMaterialScreen/>
+    // <MainScreen/>
+    <City/>
 
   );
 }
