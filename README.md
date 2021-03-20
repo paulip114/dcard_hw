@@ -1,6 +1,9 @@
 預覽圖
 ![image](./預覽圖.JPG)
 
+架構圖
+![image](./架構圖.JPG)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
