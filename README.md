@@ -4,6 +4,9 @@
 架構圖
 ![image](./架構圖.JPG)
 
+[Notion 開發筆記](https://www.notion.so/Dcard_HW-07537df890464bf3955850484b1656c6)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
