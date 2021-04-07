@@ -25,8 +25,8 @@
     justify-content: space-between;
     align-items:baseline;
     /* margin-bottom: 1.5vmin; */
-    padding-left: 15vmin;
-    padding-right: 15vmin;
+    padding-left: 3%;
+    padding-right: 3%;
 }
 
 .ScenicSpotTourismInfo-Name{
@@ -36,16 +36,18 @@
     font-family: 'Microsoft YaHei'; 
     justify-self: center;
     display: inline-block;
-    text-overflow: ellipsis;
-    overflow: hidden;
+    /* text-overflow: ellipsis;
+    overflow: hidden; */
     white-space: nowrap;
     align-self: center;
+    margin-left: 1vmin;
+    margin-right: 1vmin;
 }
 
 .ScenicSpotTourismInfo-Description{
     width: 700px;
     color: #707070; 
-    font-size: calc(5px + 2vmin);
+    font-size: calc(2px + 1vmax);
     font-family: 'Microsoft YaHei'; 
     justify-self: center;
     display: inline-block;
@@ -53,6 +55,8 @@
     overflow: hidden;
     white-space: nowrap;
     align-self: center;
+    margin-left: 1vmin;
+    margin-right: 1vmin;
  }
 
 .ScenicSpotTourismInfo-Picture{
@@ -62,7 +66,6 @@
     justify-self: center;
     align-self: center;
     display: inline-block;
-    text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
 }

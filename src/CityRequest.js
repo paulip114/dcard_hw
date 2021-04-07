@@ -8,7 +8,7 @@ const Request = axios.create({
 
 
 //發出request 取得"縣市景點列表"
-export const SendCityRequest = () => Request.get("Taipei?$top=30&$format=JSON").then(response => response.data);
+export const SendCityRequest = () => Request.get("LienchiangCounty?$top=30&$format=JSON").then(response => response.data);
 // export const SendCityRequest = () => Request.get("Taipei?$top=30&$format=JSON").then(response => response.data);
 
 //用 async/await 將收到的Promise data return  

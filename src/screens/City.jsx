@@ -18,19 +18,12 @@ function City() {
         getCityRequest().then(setSceneResults);
     }, [setSceneResults]);
 
-    //selecter 的功能（尚未完成）
-    // const [value, setvalue] = useState([]);
-    // // handleChange(event) {
-    // //     this.setState({value: event.target.value});
-    // //   }
-    
-    //通過點選selecter 進行頁面跳轉
-    // let url = "LienchiangCounty?$top=30&$format=JSON";
+
 
     return (
         <div className="App">
             <header className="App-header">
-                <Navbar NavbarTitle="臺北市" />
+                <Navbar NavbarTitle="連江縣" />
                 {/* <CityList City={url}/> */}
                 <CityList/>
                 {sceneResults.map((infoCard) => (<InfoCard key={infoCard.ID} Name={infoCard.Name} Description={infoCard.Description} Picture={infoCard.Picture.PictureUrl1} />))}

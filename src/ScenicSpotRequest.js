@@ -20,6 +20,18 @@ export async function getScenicSpotRequest() {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
 //old version old version old version old version old version old version old version old version old version
 //old version old version old version old version old version old version old version old version old version
 
