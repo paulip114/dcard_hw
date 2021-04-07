@@ -11,19 +11,15 @@ import '../App.css';
 
 
 function City() {
-
+    const [selcetedCity, setSelcetedCity] = useState('');
     const [ScenicSpot, setScenicSpot] = useState([])
-    // const [city, setcity] = useState('')
-    // const [PrevScenicSpot, setPrevScenicSpot] = useState([])
     const topNdata = 30
     const [skipNdata, setSkipNdata] = useState(0)
     const [requestTimes, setRequestTimes] = useState(1)
     const [firstRendered, setfirstRender] = useState(false)
 
-
-
     if (firstRendered === false) {
-        getFristScenicSpotRequest(topNdata, firstRendered).then(setScenicSpot);
+        getFristScenicSpotRequest(selcetedCity, topNdata, firstRendered).then(setScenicSpot);
         setfirstRender(true)
         setSkipNdata(requestTimes * 30)
         console.log("first render ended")
@@ -32,7 +28,7 @@ function City() {
     const RequestHandler = () => {
         if (firstRendered === true) {
             // setPrevScenicSpot(ScenicSpot);
-            getScenicSpotRequest(topNdata, skipNdata).then(res => {
+            getScenicSpotRequest(selcetedCity, topNdata, skipNdata).then(res => {
                 setScenicSpot(PrevSpot => {
                     return [...new Set([...PrevSpot, ...res])]
                 })
@@ -45,11 +41,18 @@ function City() {
         }
     }
 
+    function handleChildSelect(city) {
+        setSelcetedCity(city);
+        setfirstRender(false)
+        // console.log('this is', selcetedCity)
+        // console.log(typeof selcetedCity) 
+    }
+
     return (
         <div className="App">
             <header className="App-header">
-                <Navbar NavbarTitle="臺北" />
-                <CityList />
+                <Navbar NavbarTitle={selcetedCity} />
+                <CityList onChildselceted={handleChildSelect} city={selcetedCity} />
                 <InfiniteScroll
                     dataLength={ScenicSpot.length}
                     next={RequestHandler}

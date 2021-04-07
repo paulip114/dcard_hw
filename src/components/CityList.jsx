@@ -1,13 +1,20 @@
+import { useState } from 'react';
 import './CityList.css';
 
-function CityList() {
+function CityList({ city, onChildselceted }) {
+
+    // e => setselcetedCity(e.target.value)
+    //選完將selectedCity傳到父元素
+    function handleSelect(e) {
+        onChildselceted(e.target.value)
+    }
 
     return (
         <div>
             <div className="border">
                 <div className="text">請選擇縣市: </div>
-                <select className="custom-select" onChange={(e)=>{console.log(e.target.value);return e}} defaultValue="All" >
-                    <option value="All"> 全部  </option>
+                <select className="custom-select" onChange={handleSelect} defaultValue="" value={city.city}>
+                    <option value=""> 全部  </option>
                     <option value="Taipei"> 臺北市  </option>
                     <option value="NewTaipei"> 新北市  </option>
                     <option value="Taoyuan"> 桃園市  </option>
