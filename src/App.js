@@ -5,13 +5,13 @@ import React from 'react';
 import './App.css';
 import MainScreen from './screens/MainScreen.jsx';
 // import TestScreen from './screens/MainScreen.jsx';
-// import City from './screens/City.jsx';
+import City from './screens/City.jsx';
 
 
 function App() {
   return (
-    <MainScreen />
-    // <City/>
+    // <MainScreen />
+    <City/>
     // <TestScreen/>
   );
 }

@@ -1,14 +1,12 @@
-import React, { useState, useRef, useCallback, useEffect } from 'react';
+import React, { useState } from 'react';
 
 //import componets
 import InfoCard from '../components/InfoCard.jsx';
 import Navbar from '../components/Navbar.jsx';
 import CityList from '../components/CityList.jsx';
-import InfiniteScroll from "react-infinite-scroll-component";
+import InfiniteScroll from 'react-infinite-scroll-component';
 //import axios request
-// import RequestTest from '../RequestTest.js';
-import axios from 'axios';
-// import { getScenicSpotRequest } from '../ScenicSpotRequest.js';
+import { getFristScenicSpotRequest, getScenicSpotRequest } from '../Request.js';
 //import styles
 import '../App.css';
 
@@ -56,7 +54,7 @@ function MainScreen() {
                     hasMore={true}
                     loader={<h4>Loading...</h4>}
                 >
-                    {ScenicSpot.map((infoCard,index) => (<InfoCard key={index} Name={infoCard.Name} Description={infoCard.Description} Picture={infoCard.Picture.PictureUrl1} />))}
+                    {ScenicSpot.map((infoCard, index) => (<InfoCard key={index} Name={infoCard.Name} Description={infoCard.Description} Picture={infoCard.Picture.PictureUrl1} />))}
                 </InfiniteScroll>
 
             </header>
@@ -64,40 +62,40 @@ function MainScreen() {
     );
 }
 
-const Request = axios.create({
-    baseURL: 'https://ptx.transportdata.tw/MOTC/v2/Tourism/'
-});
+// const Request = axios.create({
+//     baseURL: 'https://ptx.transportdata.tw/MOTC/v2/Tourism/'
+// });
 
-async function getFristScenicSpotRequest(topNdata, firstRendered) {
-    if (firstRendered === false) {
-        try {
-            const item = await Request.get('ScenicSpot', { params: { $top: topNdata, $format: 'JSON' } }).then(response => response.data);
-            console.log("sent Frist request");
-            return item;
-        } catch (err) {
-            console.error(err);
-        }
-    }
+// async function getFristScenicSpotRequest(topNdata, firstRendered) {
+//     if (firstRendered === false) {
+//         try {
+//             const item = await Request.get('ScenicSpot', { params: { $top: topNdata, $format: 'JSON' } }).then(response => response.data);
+//             console.log("sent Frist request");
+//             return item;
+//         } catch (err) {
+//             console.error(err);
+//         }
+//     }
 
-}
+// }
 
-async function getScenicSpotRequest(topNdata, skipNdata) {
-    console.log("skip ScenicSpotRequest:", skipNdata)
-    try {
-        const item = await Request.get('ScenicSpot',
-            {
-                params: { $top: topNdata, $skip: skipNdata, $format: 'JSON' }
-            })
-            .then(response => response.data)
-        // .catch(e => {
-        //     if (axios.isCancel(e)) return
-        //     setError(true)
-        // });
-        return item;
-    } catch (err) {
-        console.error(err);
-    }
-}
+// async function getScenicSpotRequest(topNdata, skipNdata) {
+//     console.log("skip ScenicSpotRequest:", skipNdata)
+//     try {
+//         const item = await Request.get('ScenicSpot',
+//             {
+//                 params: { $top: topNdata, $skip: skipNdata, $format: 'JSON' }
+//             })
+//             .then(response => response.data)
+//         // .catch(e => {
+//         //     if (axios.isCancel(e)) return
+//         //     setError(true)
+//         // });
+//         return item;
+//     } catch (err) {
+//         console.error(err);
+//     }
+// }
 
 export default MainScreen;
 
