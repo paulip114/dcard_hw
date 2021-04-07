@@ -48,12 +48,14 @@ function City() {
         // console.log(typeof selcetedCity) 
     }
 
+
     return (
         <div className="App">
             <header className="App-header">
                 <Navbar NavbarTitle={selcetedCity} />
                 <CityList onChildselceted={handleChildSelect} city={selcetedCity} />
                 <InfiniteScroll
+                    style={{ overflow: 'initial' }}
                     dataLength={ScenicSpot.length}
                     next={RequestHandler}
                     hasMore={true}
