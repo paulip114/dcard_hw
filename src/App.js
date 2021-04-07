@@ -10,8 +10,8 @@ import City from './screens/City.jsx';
 
 function App() {
   return (
-    // <MainScreen />
-    <City/>
+    <MainScreen />
+    // <City/>
     // <TestScreen/>
   );
 }

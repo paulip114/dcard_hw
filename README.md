@@ -6,6 +6,7 @@
 
 [Notion 開發筆記](https://www.notion.so/Dcard_HW-07537df890464bf3955850484b1656c6)
 
+PS.下載後使用 VScode 開啓，使用 terminal 輸入 npm install 安裝所需套件，之後便可以輸入 npm start 執行
 
 # Getting Started with Create React App
 
