@@ -6,7 +6,7 @@ function CityList() {
         <div>
             <div className="border">
                 <div className="text">請選擇縣市: </div>
-                <select className="custom-select" onChange={(e)=>{console.log(e.target.value)}} defaultValue="All" >
+                <select className="custom-select" onChange={(e)=>{console.log(e.target.value);return e}} defaultValue="All" >
                     <option value="All"> 全部  </option>
                     <option value="Taipei"> 臺北市  </option>
                     <option value="NewTaipei"> 新北市  </option>
