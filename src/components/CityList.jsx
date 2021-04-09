@@ -1,12 +1,16 @@
-import { useState } from 'react';
 import './CityList.css';
+import { useHistory } from 'react-router-dom';
 
 function CityList({ city, onChildselceted }) {
+    let history = useHistory();
 
-    // e => setselcetedCity(e.target.value)
-    //選完將selectedCity傳到父元素
     function handleSelect(e) {
-        onChildselceted(e.target.value)
+        onChildselceted(e.target.value);    //將所選的 value 傳到父元素
+        history.push(`/scenicSpot/${e.target.value}`);  //使用 useHistory 將所選value傳到App.js再傳到City.js
+
+        // var index = e.nativeEvent.target.selectedIndex; //獲取option中的中文字
+        // var title = e.nativeEvent.target[index].text; //獲取option中的中文字
+        // console.log(title); //獲取option中的中文字
     }
 
     return (
@@ -14,8 +18,8 @@ function CityList({ city, onChildselceted }) {
             <div className="border">
                 <div className="text">請選擇縣市: </div>
                 <select className="custom-select" onChange={handleSelect} defaultValue="" value={city.city}>
-                    <option value=""> 全部  </option>
-                    <option value="Taipei"> 臺北市  </option>
+                    <option value="" > 全部  </option>
+                    <option value="Taipei" >臺北市</option>
                     <option value="NewTaipei"> 新北市  </option>
                     <option value="Taoyuan"> 桃園市  </option>
                     <option value="Taichung"> 臺中市  </option>
