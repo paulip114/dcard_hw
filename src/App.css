@@ -41,3 +41,9 @@
     transform: rotate(360deg);
   }
 }
+/* 
+.adjustment{
+  display: flex;
+  background-color: black;
+  align-items: center 
+} */

@@ -5,13 +5,13 @@ import InfoCard from '../components/InfoCard.jsx';
 import Navbar from '../components/Navbar.jsx';
 import CityList from '../components/CityList.jsx';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { getFristScenicSpotRequest, getScenicSpotRequest } from '../CityRequest.js';
+import { getFristScenicSpotRequest, getScenicSpotRequest } from '../Request.js';
 //import styles
 import '../App.css';
 
 
-function City() {
-    const [selcetedCity, setSelcetedCity] = useState('');
+function City({match}) {
+    const [selcetedCity, setSelcetedCity] = useState(match.params.City);
     const [ScenicSpot, setScenicSpot] = useState([])
     const topNdata = 30
     const [skipNdata, setSkipNdata] = useState(0)
@@ -54,16 +54,17 @@ function City() {
             <header className="App-header">
                 <Navbar NavbarTitle={selcetedCity} />
                 <CityList onChildselceted={handleChildSelect} city={selcetedCity} />
-                <InfiniteScroll
-                    style={{ overflow: 'initial' }}
-                    dataLength={ScenicSpot.length}
-                    next={RequestHandler}
-                    hasMore={true}
-                    loader={<h4>Loading...</h4>}
-                >
-                    {ScenicSpot.map((infoCard, index) => (<InfoCard key={index} Name={infoCard.Name} Description={infoCard.Description} Picture={infoCard.Picture.PictureUrl1} />))}
-                </InfiniteScroll>
-
+                <div className="adjustment">
+                    <InfiniteScroll
+                        style={{ overflow: 'initial', display: 'block', marginRight: 'auto',marginLeft: 'auto' }}
+                        dataLength={ScenicSpot.length}
+                        next={RequestHandler}
+                        hasMore={true}
+                        loader={<h4>Loading...</h4>}
+                    >
+                        {ScenicSpot.map((infoCard, index) => (<InfoCard key={index} Name={infoCard.Name} Description={infoCard.Description} Picture={infoCard.Picture.PictureUrl1} />))}
+                    </InfiniteScroll>
+                </div>
             </header>
         </div>
     );
