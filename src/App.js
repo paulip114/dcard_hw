@@ -4,7 +4,7 @@ import './App.css';
 import MainScreen from './screens/MainScreen.jsx';
 // import TestScreen from './screens/MainScreen.jsx';
 import City from './screens/City.jsx';
-import { BrowserRouter as Router, Route, Link, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 
 function App() {
   return (

@@ -1,5 +1,7 @@
 預覽圖
 ![image](./預覽圖.JPG)
+![image](./預覽圖2.JPG)
+![image](./預覽圖3.JPG)
 
 架構圖
 ![image](./架構圖.JPG)
