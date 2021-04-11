@@ -10,7 +10,6 @@ import { getFristScenicSpotRequest, getScenicSpotRequest } from '../Request.js';
 //import styles
 import '../App.css';
 
-
 function MainScreen() {
     const [selcetedCity, setSelcetedCity] = useState('');
     const [ScenicSpot, setScenicSpot] = useState([])
@@ -48,7 +47,6 @@ function MainScreen() {
         // console.log(typeof selcetedCity) 
     }
 
-
     return (
         <div className="App">
             <header className="App-header">
@@ -56,7 +54,7 @@ function MainScreen() {
                 <CityList onChildselceted={handleChildSelect} city={selcetedCity} />
                 <div className="adjustment">
                     <InfiniteScroll
-                        style={{ overflow: 'initial', display: 'block', marginRight: 'auto',marginLeft: 'auto' }}
+                        style={{ overflow: 'initial', display: 'block', marginRight: 'auto', marginLeft: 'auto' }}
                         dataLength={ScenicSpot.length}
                         next={RequestHandler}
                         hasMore={true}
